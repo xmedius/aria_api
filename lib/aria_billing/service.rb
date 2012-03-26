@@ -44,6 +44,6 @@ module AriaBilling
               'get_acct_groups_by_client','get_acct_payment_methods','get_auf_status',
               'get_avail_child_plans_for_plan','get_avail_child_plans_for_plan_all','get_available_plans',
               'get_available_plans_all','get_child_for_item_class','get_client_currencies',
-              'get_client_plan_service_rates','get_client_plan_services']
+              'get_client_plan_service_rates','get_client_plan_services','get_client_plans_all']
   end
 end

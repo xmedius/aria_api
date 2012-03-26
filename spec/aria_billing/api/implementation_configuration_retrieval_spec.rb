@@ -171,6 +171,16 @@ describe "Implementation Configuration Retrieval" do
     end
   end
 
+  describe "self.get_client_plans_all(params)",:vcr do
+    it "Returns a detailed list of all plans associated with a client" do
+      response = api.get_client_plans_all({})
+
+      response.should have_key("all_client_plans")
+      response.should have_key("error_code")
+      response.should have_key("error_msg")
+    end
+  end
+
   describe "self.get_web_replacement_vals(params)",:vcr do
     it "get an array of values for an array of input web replacement strings" do
       response = api.get_web_replacement_vals({"in_replacement_names" => "One|Two"})
