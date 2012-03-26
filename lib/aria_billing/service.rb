@@ -47,6 +47,7 @@ module AriaBilling
               'get_client_plan_service_rates','get_client_plan_services','get_client_plans_all',
               'get_client_plans_basic','get_current_system_version','get_email_templates',
               'get_inv_no_from_bal_xfer','get_items_by_class','get_items_by_supp_field',
-              'get_master_plans_by_supp_field','get_parent_for_item_class','get_plans_by_promo_code']
+              'get_master_plans_by_supp_field','get_parent_for_item_class','get_plans_by_promo_code',
+              'get_plans_by_promo_code_all']
   end
 end
