@@ -50,6 +50,6 @@ module AriaBilling
               'get_master_plans_by_supp_field','get_parent_for_item_class','get_plans_by_promo_code',
               'get_plans_by_promo_code_all','get_rate_schedules_for_plan','get_reg_uss_config_params',
               'get_reg_uss_params','get_supp_plans_by_promo_code','get_supp_plans_by_promo_code_all',
-              'get_supp_plans_by_supp_field','get_top_level_item_class']
+              'get_supp_plans_by_supp_field','get_top_level_item_class','pre_calc_invoice']
   end
 end

@@ -341,7 +341,7 @@ describe "Implementation Configuration Retrieval" do
   end
 
   describe "self.get_top_level_item_class(params)",:vcr do
-    it "Returns a list of supplemental plans associated with a specified value for supplemental object field" do
+    it "Returns all the parent classes for that client" do
       response = api.get_top_level_item_class   
 
       response.should have_key("top_item_class")
@@ -352,9 +352,19 @@ describe "Implementation Configuration Retrieval" do
 
   describe "self.get_web_replacement_vals(params)",:vcr do
     it "get an array of values for an array of input web replacement strings" do
-      response = api.get_web_replacement_vals({"in_replacement_names" => "One|Two"})
+      response = api.get_web_replacement_vals ({"in_replacement_names" => "One|Two"})
 
       response.should have_key("web_vals_out")
+      response.should have_key("error_code")
+      response.should have_key("error_msg")
+    end
+  end
+
+  describe "self.pre_calc_invoice(params)",:vcr do
+    it "Calculates a hypothetical invoice based on geographic data an hypothetical invoice line items" do
+      response = api.pre_calc_invoice
+
+      response.should have_key("inv_calc_out")
       response.should have_key("error_code")
       response.should have_key("error_msg")
     end
