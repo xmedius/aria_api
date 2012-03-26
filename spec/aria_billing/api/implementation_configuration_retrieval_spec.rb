@@ -252,6 +252,16 @@ describe "Implementation Configuration Retrieval" do
     end
   end
 
+  describe "self.get_parent_for_item_class(params)",:vcr do
+    it "Returns the immediate parent classes for that client" do
+      response = api.get_parent_for_item_class ({ "filter_class_no" => 1 })
+
+      response.should have_key("parent_item_class")
+      response.should have_key("error_code")
+      response.should have_key("error_msg")
+    end
+  end
+
   describe "self.get_web_replacement_vals(params)",:vcr do
     it "get an array of values for an array of input web replacement strings" do
       response = api.get_web_replacement_vals({"in_replacement_names" => "One|Two"})
