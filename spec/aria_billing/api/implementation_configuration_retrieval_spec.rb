@@ -151,6 +151,16 @@ describe "Implementation Configuration Retrieval" do
     end
   end
 
+  describe "self.get_client_plan_service_rates(params)",:vcr do
+    it "Return information about the rates for a particular service in a specified pla" do
+      response = api.get_client_plan_service_rates({ "plan_no" => 1, "service_no" => 1 })
+
+      response.should have_key("plan_service_rates")
+      response.should have_key("error_code")
+      response.should have_key("error_msg")
+    end
+  end
+
   describe "self.get_web_replacement_vals(params)",:vcr do
     it "get an array of values for an array of input web replacement strings" do
       response = api.get_web_replacement_vals({"in_replacement_names" => "One|Two"})
