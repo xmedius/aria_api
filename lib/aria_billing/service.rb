@@ -44,5 +44,12 @@ module AriaBilling
               'get_acct_groups_by_client','get_acct_payment_methods','get_auf_status',
               'get_avail_child_plans_for_plan','get_avail_child_plans_for_plan_all','get_available_plans',
               'get_available_plans_all','get_child_for_item_class']
+
+    def self.actions
+      url = "https://secure.future.stage.ariasystems.net/api/Advanced/wsdl/5.7/complete-doc_literal_wrapped.wsdl"
+      client = Savon::Client.new url
+      client.wsdl.soap_actions
+    end
+
   end
 end

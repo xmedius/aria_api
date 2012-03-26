@@ -13,17 +13,21 @@ http_interactions:
       message: Not Found
     headers:
       Date:
-      - Thu, 22 Mar 2012 20:41:50 GMT
+      - Mon, 26 Mar 2012 16:11:34 GMT
       Server:
       - Apache
       Status:
       - 404 Not Found
       Content-Length:
       - '46'
+      Keep-Alive:
+      - timeout=15, max=100
+      Connection:
+      - Keep-Alive
       Content-Type:
       - application/json
       Set-Cookie:
-      - citrix_ns_id=ACeDU84cEvuwTVwpomRe2ByGX/kA0; Domain=.future.stage.ariasystems.net;
+      - citrix_ns_id=5RkjD5+SghmkttnBJN7xUq1bU68A0; Domain=.future.stage.ariasystems.net;
         Path=/; HttpOnly
     body:
       encoding: US-ASCII
@@ -31,5 +35,5 @@ http_interactions:
 
 '
     http_version: 
-  recorded_at: Thu, 22 Mar 2012 20:41:50 GMT
+  recorded_at: Mon, 26 Mar 2012 16:11:35 GMT
 recorded_with: VCR 2.0.0

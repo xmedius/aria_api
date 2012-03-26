@@ -19,6 +19,6 @@ module AriaBilling
 
     def self.credentials
       { auth_key: auth_key, client_no: client_no }
-    end
+    end    
   end
 end
