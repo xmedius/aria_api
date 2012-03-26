@@ -191,6 +191,16 @@ describe "Implementation Configuration Retrieval" do
     end
   end
 
+  describe "self.get_current_system_version(params)",:vcr do
+    it "Returns the current version number of the Aria platform" do
+      response = api.get_current_system_version({})
+
+      response.should have_key("version")
+      response.should have_key("error_code")
+      response.should have_key("error_msg")
+    end
+  end
+
   describe "self.get_web_replacement_vals(params)",:vcr do
     it "get an array of values for an array of input web replacement strings" do
       response = api.get_web_replacement_vals({"in_replacement_names" => "One|Two"})
