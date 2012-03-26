@@ -152,10 +152,20 @@ describe "Implementation Configuration Retrieval" do
   end
 
   describe "self.get_client_plan_service_rates(params)",:vcr do
-    it "Return information about the rates for a particular service in a specified pla" do
+    it "Return information about the rates for a particular service in a specified plan" do
       response = api.get_client_plan_service_rates({ "plan_no" => 1, "service_no" => 1 })
 
       response.should have_key("plan_service_rates")
+      response.should have_key("error_code")
+      response.should have_key("error_msg")
+    end
+  end
+
+  describe "self.get_client_plan_services(params)",:vcr do
+    it "Return information about the service in a specified plan" do
+      response = api.get_client_plan_services({ "plan_no" => 1 })
+
+      response.should have_key("plan_services")
       response.should have_key("error_code")
       response.should have_key("error_msg")
     end
