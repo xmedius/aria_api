@@ -294,10 +294,8 @@ describe "Implementation Configuration Retrieval" do
 
   describe "self.get_reg_uss_config_params(params)",:vcr do
     it "Returns the parameter name-value pairs for a specified configuration" do
-      response = api.get_reg_uss_config_params ({ "set_name" => 1 }) 
+      response = api.get_reg_uss_config_params ({ "set_name" => 'Test' }) 
 
-      response.should have_key("param_name")
-      response.should have_key("param_val")
       response.should have_key("error_code")
       response.should have_key("error_msg")
     end
