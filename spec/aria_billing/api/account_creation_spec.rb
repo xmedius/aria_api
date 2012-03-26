@@ -1,11 +1,6 @@
 require 'spec_helper'
 
 describe "Account Creation" do
-
-  def api
-    AriaBilling
-  end
-
   describe "self.create_acct_complete(params)",:vcr do
     it "Creates an account with an extensive set of data elements" do
       response = api.create_acct_complete({"master_plan_no" => 1})

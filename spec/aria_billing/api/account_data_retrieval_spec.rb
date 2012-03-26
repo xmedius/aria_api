@@ -1,13 +1,8 @@
 require 'spec_helper'
 
 describe "Account Data Retrieval" do
-
-  def api
-    AriaBilling
-  end
-  
   describe "self.authenticate_client(params)",:vcr do
-    it "check client credentials" do 
+    it "check client credentials" do
       pending "TODO"
       response = api.authenticate_client({})
     end
@@ -26,7 +21,7 @@ describe "Account Data Retrieval" do
    end
 
   describe "self.get_acct_details_all(params)",:vcr do
-    it "Returns all avalible information about an account" do 
+    it "Returns all avalible information about an account" do
       response = api.get_acct_details_all({ "acct_no" => 1})
 
       response.should have_key("first_name")
@@ -132,7 +127,7 @@ describe "Account Data Retrieval" do
     end
   end
 
-  describe "self.get_acct_groups_by_acct(params)",:vcr do 
+  describe "self.get_acct_groups_by_acct(params)",:vcr do
     it "Returns the list of account groups to which an account belongs" do
       response = api.get_acct_groups_by_acct({ "acct_no" => 1, "user_id" => 'PSLcorp'})
 
@@ -146,7 +141,7 @@ describe "Account Data Retrieval" do
     it "Returns the account number associated with a specified user ID" do
       pending "TODO"
       response = api.get_acct_no_from_userid({ "user_id" => 'PSLcorp'})
-      
+
       response.should have_key("error_code")
       response.should have_key("error_msg")
     end
@@ -222,10 +217,10 @@ describe "Account Data Retrieval" do
       response.should have_key("history")
     end
   end
- 
+
   describe "self.get_accts_w_existing_pay_meth(params)", :vcr do
     it "For the given input specified electronic form of payment" do
-      pending "TODO" 
+      pending "TODO"
       response = api.get_accts_w_existing_pay_meth({})
     end
   end

@@ -1,11 +1,6 @@
 require 'spec_helper'
 
 describe "Implementation Configuration Retrieval" do
-
-  def api
-    AriaBilling
-  end
-
   describe "self.clear_reg_uss_config_params(params)",:vcr do
     it "Removes all of the parameter name-value pairs in a specified configuration" do
       response = api.clear_reg_uss_config_params ({ "set_name" => 'Test'})
@@ -74,7 +69,7 @@ describe "Implementation Configuration Retrieval" do
 
   describe "self.get_auf_status(params)",:vcr do
     it "Returns the statistics for a specified usage file" do
-      response = api.get_auf_status 
+      response = api.get_auf_status
 
       response.should have_key("status_cd")
       response.should have_key("load_date_time")
@@ -147,7 +142,7 @@ describe "Implementation Configuration Retrieval" do
   end
 
   describe "self.get_web_replacement_vals(params)",:vcr do
-    it "get an array of values for an array of input web replacement strings" do 
+    it "get an array of values for an array of input web replacement strings" do
       response = api.get_web_replacement_vals({"in_replacement_names" => "One|Two"})
 
       response.should have_key("web_vals_out")

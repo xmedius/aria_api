@@ -1,12 +1,7 @@
 require 'spec_helper'
 
 describe "Account Modification" do
-
-  def api
-    AriaBilling
-  end
-
-  describe "self.adjust_billing_dates(params)",:vcr do 
+  describe "self.adjust_billing_dates(params)",:vcr do
     it "Adjust the billing date for a specified account to a date in the future or date in the past" do
       params = { "acct_no" => 1, "action_directive" => 1, "adjustament_days" => 1,"comments" => "Test" }
       response = api.adjust_billing_dates params
@@ -138,7 +133,7 @@ describe "Account Modification" do
       response.should have_key("total_charges_before_tax")
       response.should have_key("total_tax_charges")
       response.should have_key("total_charges_after_tax")
-      response.should have_key("total_credit")   
+      response.should have_key("total_credit")
     end
   end
 
@@ -318,12 +313,12 @@ describe "Account Modification" do
   end
 
   describe "self.update_billing_info(params)",:vcr do
-    it "Insert or update billing_info rec" do 
+    it "Insert or update billing_info rec" do
       pending "TODO"
       response = api.update_billing_info({})
     end
   end
-  
+
   describe "self.update_existing_billing_info(params)",:vcr do
     it "Updates some billing info " do
       response = api.update_existing_billing_info({ "acct_no" => 1 })
@@ -341,5 +336,5 @@ describe "Account Modification" do
       response.should have_key("proc_auth_code")
      response.should have_key("proc_merch_comments")
     end
-   end 
+   end
 end

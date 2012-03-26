@@ -1,12 +1,7 @@
 require 'spec_helper'
 
 describe "Account Transaction Creation" do
-
-  def api
-    AriaBilling
-  end
-
-  describe "self.authorize_electronic_payment(params)",:vcr do 
+  describe "self.authorize_electronic_payment(params)",:vcr do
     it "Authorize a credit card for a specified amount" do
       response = api.authorize_electronic_payment ({ "account_number" => 1, "amount" => 20000 })
 
@@ -23,7 +18,7 @@ describe "Account Transaction Creation" do
     end
   end
 
-   describe "self.collect_from_account(params)",:vcr do 
+   describe "self.collect_from_account(params)",:vcr do
     it "Collects a specified amount from a specified account holder using the electronic method of payment on file" do
       response = api.collect_from_account ({ "account_no" => 1, "amount_to_collect" => 20000 })
 
@@ -41,7 +36,7 @@ describe "Account Transaction Creation" do
     end
   end
 
-  describe "self.create_order(params)",:vcr do 
+  describe "self.create_order(params)",:vcr do
     it "Creates an invoice for one or more inventory items ordered by a specified account holder" do
       params = { "account_no" => 1, "client_sku" => 'Test', "units" => 2, "amount" => 20000, "unit_discount_amount" => 1000, "bill_immediately" => 1 }
       response = api.create_order params
@@ -60,11 +55,11 @@ describe "Account Transaction Creation" do
       response.should have_key("proc_merch_comments")
       response.should have_key("invoice_no")
       response.should have_key("error_code")
-      response.should have_key("error_msg")      
+      response.should have_key("error_msg")
     end
   end
 
-  describe "self.create_order_with_plans(params)",:vcr do 
+  describe "self.create_order_with_plans(params)",:vcr do
     it "Allows creation of order and plan changes on a single invoice" do
       params = { "acct_no" => 1, "client_sku" => 'Test', "units" => 2, "amount" => 20000, "supp_plan_no" => 1, "supp_plan_units" => 100 }
       response = api.create_order_with_plans params
@@ -86,7 +81,7 @@ describe "Account Transaction Creation" do
       response.should have_key("proc_payment_id")
       response.should have_key("proc_auth_code")
       response.should have_key("proc_merch_comments")
-      response.should have_key("error_msg")      
+      response.should have_key("error_msg")
     end
   end
 
