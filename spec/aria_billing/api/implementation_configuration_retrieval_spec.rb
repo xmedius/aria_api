@@ -262,6 +262,16 @@ describe "Implementation Configuration Retrieval" do
     end
   end
 
+  describe "self.get_plans_by_promo_code(params)",:vcr do
+    it "Returns a summary list of plans associated with a specified promotion code" do
+      response = api.get_plans_by_promo_code 
+
+      response.should have_key("plans")
+      response.should have_key("error_code")
+      response.should have_key("error_msg")
+    end
+  end
+
   describe "self.get_web_replacement_vals(params)",:vcr do
     it "get an array of values for an array of input web replacement strings" do
       response = api.get_web_replacement_vals({"in_replacement_names" => "One|Two"})
