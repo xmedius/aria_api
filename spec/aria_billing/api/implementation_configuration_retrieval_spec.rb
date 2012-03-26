@@ -380,6 +380,16 @@ describe "Implementation Configuration Retrieval" do
     end
   end
 
+  describe "self.replace_reg_uss_params(params)",:vcr do
+    it "Replaces the parameter name-value pairs in a particular configuration" do
+      params = { "session_id" => 1, "param_val" => 'Test', "param_name" => 'Test' }
+      response = api.replace_reg_uss_params params
+
+      response.should have_key("error_code")
+      response.should have_key("error_msg")
+    end
+  end
+
   describe "self.validate_session(params)",:vcr do
    it "Determines the validity of a specified session and the user with session ID" do
       response = api.validate_session({"session_id" => '123456'})
