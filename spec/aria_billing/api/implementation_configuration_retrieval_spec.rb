@@ -242,6 +242,16 @@ describe "Implementation Configuration Retrieval" do
     end
   end
 
+  describe "self.get_master_plans_by_supp_field(params)",:vcr do
+    it "Returns the master plans associated with a particular value for a supplemental object field" do
+      response = api.get_master_plans_by_supp_field ({ "field_no" => 1, "field_val" => 1 })
+
+      response.should have_key("master_plans_by_supp_field")
+      response.should have_key("error_code")
+      response.should have_key("error_msg")
+    end
+  end
+
   describe "self.get_web_replacement_vals(params)",:vcr do
     it "get an array of values for an array of input web replacement strings" do
       response = api.get_web_replacement_vals({"in_replacement_names" => "One|Two"})
