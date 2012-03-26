@@ -301,6 +301,15 @@ describe "Implementation Configuration Retrieval" do
     end
   end
 
+  describe "self.get_reg_uss_params(params)",:vcr do
+    it "Returns the parameter name-value pairs for a specified session ID" do
+      response = api.get_reg_uss_params ({ "session_id" => 1 }) 
+
+      response.should have_key("error_code")
+      response.should have_key("error_msg")
+    end
+  end
+
   describe "self.get_web_replacement_vals(params)",:vcr do
     it "get an array of values for an array of input web replacement strings" do
       response = api.get_web_replacement_vals({"in_replacement_names" => "One|Two"})
