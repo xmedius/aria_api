@@ -201,6 +201,16 @@ describe "Implementation Configuration Retrieval" do
     end
   end
 
+  describe "self.get_email_templates(params)",:vcr do
+    it "Returns the list of email templates associated with a client" do
+      response = api.get_email_templates
+
+      response.should have_key("templates_by_client")
+      response.should have_key("error_code")
+      response.should have_key("error_msg")
+    end
+  end
+
   describe "self.get_web_replacement_vals(params)",:vcr do
     it "get an array of values for an array of input web replacement strings" do
       response = api.get_web_replacement_vals({"in_replacement_names" => "One|Two"})
