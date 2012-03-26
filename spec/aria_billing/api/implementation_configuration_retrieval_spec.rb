@@ -133,7 +133,7 @@ describe "Implementation Configuration Retrieval" do
 
   describe "self.get_client_countries(params)",:vcr do
     it "return a list of countries assigned to a client" do
-      response = api.get_client_countries({})
+      response = api.get_client_countries
 
       response.should have_key("client_country")
       response.should have_key("error_code")
@@ -143,7 +143,7 @@ describe "Implementation Configuration Retrieval" do
 
   describe "self.get_client_currencies(params)",:vcr do
     it "return a list of currencies assigned to a client" do
-      response = api.get_client_currencies({})
+      response = api.get_client_currencies
 
       response.should have_key("client_currency")
       response.should have_key("error_code")
@@ -173,7 +173,7 @@ describe "Implementation Configuration Retrieval" do
 
   describe "self.get_client_plans_all(params)",:vcr do
     it "Returns a detailed list of all plans associated with a client" do
-      response = api.get_client_plans_all({})
+      response = api.get_client_plans_all
 
       response.should have_key("all_client_plans")
       response.should have_key("error_code")
@@ -183,7 +183,7 @@ describe "Implementation Configuration Retrieval" do
 
   describe "self.get_client_plans_basic(params)",:vcr do
     it "Returns a summary list of all plans associated with a client" do
-      response = api.get_client_plans_basic({})
+      response = api.get_client_plans_basic
 
       response.should have_key("plans_basic")
       response.should have_key("error_code")
@@ -193,7 +193,7 @@ describe "Implementation Configuration Retrieval" do
 
   describe "self.get_current_system_version(params)",:vcr do
     it "Returns the current version number of the Aria platform" do
-      response = api.get_current_system_version({})
+      response = api.get_current_system_version
 
       response.should have_key("version")
       response.should have_key("error_code")
@@ -206,6 +206,17 @@ describe "Implementation Configuration Retrieval" do
       response = api.get_email_templates
 
       response.should have_key("templates_by_client")
+      response.should have_key("error_code")
+      response.should have_key("error_msg")
+    end
+  end
+
+  describe "self.get_inv_no_from_bal_xfer(params)",:vcr do
+    it "Returns the invoice number associated with a specified balance transfer" do
+      response = api.get_inv_no_from_bal_xfer ({ "transaction_id" => 1 })
+
+      response.should have_key("invoice_no")
+      response.should have_key("acct_no")
       response.should have_key("error_code")
       response.should have_key("error_msg")
     end
