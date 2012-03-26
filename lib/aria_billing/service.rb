@@ -46,6 +46,6 @@ module AriaBilling
               'get_available_plans_all','get_child_for_item_class','get_client_currencies',
               'get_client_plan_service_rates','get_client_plan_services','get_client_plans_all',
               'get_client_plans_basic','get_current_system_version','get_email_templates',
-              'get_inv_no_from_bal_xfer']
+              'get_inv_no_from_bal_xfer','get_items_by_class']
   end
 end

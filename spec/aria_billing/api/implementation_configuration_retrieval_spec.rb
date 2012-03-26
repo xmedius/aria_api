@@ -222,6 +222,16 @@ describe "Implementation Configuration Retrieval" do
     end
   end
 
+  describe "self.get_items_by_class(params)",:vcr do
+    it "Returns the items for a given class" do
+      response = api.get_items_by_class ({ "filter_class_no" => 1 })
+
+      response.should have_key("class_items")
+      response.should have_key("error_code")
+      response.should have_key("error_msg")
+    end
+  end
+
   describe "self.get_web_replacement_vals(params)",:vcr do
     it "get an array of values for an array of input web replacement strings" do
       response = api.get_web_replacement_vals({"in_replacement_names" => "One|Two"})
