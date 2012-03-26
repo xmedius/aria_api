@@ -141,6 +141,16 @@ describe "Implementation Configuration Retrieval" do
     end
   end
 
+  describe "self.get_client_currencies(params)",:vcr do
+    it "return a list of currencies assigned to a client" do
+      response = api.get_client_currencies({})
+
+      response.should have_key("client_currency")
+      response.should have_key("error_code")
+      response.should have_key("error_msg")
+    end
+  end
+
   describe "self.get_web_replacement_vals(params)",:vcr do
     it "get an array of values for an array of input web replacement strings" do
       response = api.get_web_replacement_vals({"in_replacement_names" => "One|Two"})
