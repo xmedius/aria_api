@@ -64,4 +64,14 @@ describe "Other-Special" do
 			response.should have_key("error_msg")
 		end
 	end
+
+	describe "self.toggle_test_account(params)", :vcr do
+	 	it "Changes a specified account from a live account to a test account or from a test account to a live account." do
+	 		params = {"account_no" => 1}
+	 		response = api.toggle_test_account params
+
+	 		response.should have_key("error_code")  
+	 		response.should have_key("error_msg")
+	 	end
+	end
 end
