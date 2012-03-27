@@ -76,4 +76,13 @@ describe "Implementation Configuration Modification" do
           response.should have_key("error_msg")
       end
    end
+
+   describe "self.kill_session(params)", :vcr do
+      it "End a customer's session in a registration or User Self Service application" do
+          response = api.kill_session
+
+          response.should have_key("error_code")
+          response.should have_key("error_msg")
+      end
+   end
 end
