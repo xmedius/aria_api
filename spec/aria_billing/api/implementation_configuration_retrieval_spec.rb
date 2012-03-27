@@ -282,6 +282,16 @@ describe "Implementation Configuration Retrieval" do
     end
   end
 
+  describe "self.get_rate_schedules_for_plan(params)",:vcr do
+    it "Returns a list of rate schedules associated with a specified plan" do
+      response = api.get_rate_schedules_for_plan ({ "plan_no" => 1 }) 
+
+      response.should have_key("rate_sched")
+      response.should have_key("error_code")
+      response.should have_key("error_msg")
+    end
+  end
+
   describe "self.get_web_replacement_vals(params)",:vcr do
     it "get an array of values for an array of input web replacement strings" do
       response = api.get_web_replacement_vals({"in_replacement_names" => "One|Two"})
