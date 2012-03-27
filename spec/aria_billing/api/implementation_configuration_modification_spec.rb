@@ -186,4 +186,28 @@ describe "Implementation Configuration Modification" do
           response = api.update_inventory_item_stock_level
       end
    end
+
+   describe "self.update_master_plan(params)", :vcr do
+      it "Changes the master plan assigned to a specified account holder" do
+          response = api.update_master_plan ({ "acct_no" => 1 })
+
+          response.should have_key("error_code")
+          response.should have_key("proration_result_amount")
+          response.should have_key("collection_error_code")
+          response.should have_key("collection_error_msg")
+          response.should have_key("statement_error_code")
+          response.should have_key("statement_error_msg")
+          response.should have_key("proc_cvv_response")
+          response.should have_key("proc_avs_response")
+          response.should have_key("proc_cavv_response")
+          response.should have_key("proc_status_code")
+          response.should have_key("proc_status_text")
+          response.should have_key("proc_payment_id")
+          response.should have_key("proc_auth_code")
+          response.should have_key("proc_merch_comments")
+          response.should have_key("invoice_no")
+          response.should have_key("cancelled_supp_plans")
+          response.should have_key("error_msg")
+      end
+   end
 end

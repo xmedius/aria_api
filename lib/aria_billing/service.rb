@@ -60,6 +60,6 @@ module AriaBilling
               'set_prov_engine','set_session','set_session_auth',
               'subscribe_event','subscribe_event_class','subscribe_events',
               'unsubscribe_event','unsubscribe_event_class','unsubscribe_events',
-              'update_inventory_item_stock_level']
+              'update_inventory_item_stock_level','update_master_plan']
   end
 end
