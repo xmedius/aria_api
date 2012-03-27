@@ -44,4 +44,14 @@ describe "Other-Special" do
 			response.should have_key("client_receipt")
 		end
 	end
+
+	describe "self.init_paypal_bill_agreement(params)", :vcr do
+		it "Creates a session with PayPal so that a customer can set up a billing agreement" do
+			params = {"acct_no" => 1}
+			response = api.init_paypal_bill_agreement params
+
+			response.should have_key("error_code")
+			response.should have_key("error_msg")
+		end  
+	end
 end
