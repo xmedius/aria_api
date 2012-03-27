@@ -1,0 +1,34 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://secure.future.stage.ariasystems.net/api/ws/api_ws_class_dispatcher.php
+    body:
+      encoding: US-ASCII
+      string: output_format=json&auth_key=8Vn848nuRPa58jht9jBBpWvSUVsn3fnB&client_no=4950701&rest_call=subscribe_event&event_id=1
+    headers: {}
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 27 Mar 2012 18:50:33 GMT
+      Server:
+      - Apache
+      Content-Length:
+      - '77'
+      Content-Type:
+      - application/json
+      Set-Cookie:
+      - citrix_ns_id=9Qdv7Bc0fjym+YfWSC5sUnGqIScA0; Domain=.future.stage.ariasystems.net;
+        Path=/; HttpOnly
+    body:
+      encoding: US-ASCII
+      string: ! '{"error_code":17001,"error_msg":"Client not eligible to subscribe
+        to event"}
+
+'
+    http_version: 
+  recorded_at: Tue, 27 Mar 2012 18:50:32 GMT
+recorded_with: VCR 2.0.0
