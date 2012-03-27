@@ -381,7 +381,7 @@ describe "Implementation Configuration Retrieval" do
   end
 
   describe "self.replace_reg_uss_params(params)",:vcr do
-    it "Replaces the parameter name-value pairs in a particular configuration" do
+    it "Replaces the parameter name-value pairs in a particular session ID" do
       params = { "session_id" => 1, "param_val" => 'Test', "param_name" => 'Test' }
       response = api.replace_reg_uss_params params
 
