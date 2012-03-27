@@ -58,6 +58,6 @@ module AriaBilling
               'disable_standing_usage_by_plan','get_acct_tax_exempt_status','get_client_items',
               'keep_alive','kill_session','set_acct_tax_exempt_status',
               'set_prov_engine','set_session','set_session_auth',
-              'subscribe_event']
+              'subscribe_event','subscribe_event_class']
   end
 end
