@@ -34,4 +34,14 @@ describe "Other-Special" do
 			response.should have_key("receipt_action")
 		end
 	end
+
+	describe "self.get_all_client_receipt_ids(params)", :vcr do
+		it "Returns a list of all client receipt IDs entered as input parameters for any API call to Aria." do
+			response = api.get_all_client_receipt_ids
+
+			response.should have_key("error_code")
+			response.should have_key("error_msg")
+			response.should have_key("client_receipt")
+		end
+	end
 end
