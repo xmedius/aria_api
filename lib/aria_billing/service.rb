@@ -54,6 +54,7 @@ module AriaBilling
               'replace_reg_uss_config_params','replace_reg_uss_params','set_reg_uss_config_params',
               'set_reg_uss_params','get_all_acct_receipt_ids','get_all_actions_by_receipt_id',
               'get_all_client_receipt_ids','init_paypal_bill_agreement','save_paypal_bill_agreement',
-              'toggle_test_account','assign_supp_plan_multi','disable_all_standing_usage']
+              'toggle_test_account','assign_supp_plan_multi','disable_all_standing_usage',
+              'disable_standing_usage_by_plan']
   end
 end

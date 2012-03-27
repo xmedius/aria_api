@@ -35,4 +35,14 @@ describe "Implementation Configuration Modification" do
         response.should have_key("error_msg")
      end
    end
+
+   describe "self.disable_standing_usage_by_plan(params)", :vcr do
+      it "Disables the standing usage records for a particular plan assigned to an account." do
+          params = {"acct_no" => 1, "plan_no" => 1}
+          response = api.disable_standing_usage_by_plan params
+
+          response.should have_key("error_code")
+          response.should have_key("error_msg")
+      end
+   end
 end
