@@ -179,4 +179,11 @@ describe "Implementation Configuration Modification" do
           response.should have_key("error_msg")
       end
    end
+
+   describe "self.update_inventory_item_stock_level(params)", :vcr do
+      it "Increases or decreases the stock level of a specified inventory item" do
+          pending "TODO"
+          response = api.update_inventory_item_stock_level
+      end
+   end
 end
