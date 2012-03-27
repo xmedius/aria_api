@@ -330,6 +330,16 @@ describe "Implementation Configuration Retrieval" do
     end
   end
 
+  describe "self.get_supp_plans_by_supp_field(params)",:vcr do
+    it "Returns a list of supplemental plans associated with a specified value for supplemental object field" do
+      response = api.get_supp_plans_by_supp_field ({ "field_no" => 1, "field_val" => 1 })  
+
+      response.should have_key("supp_plans_by_supp_field")
+      response.should have_key("error_msg")
+      response.should have_key("error_code")
+    end
+  end
+
   describe "self.get_web_replacement_vals(params)",:vcr do
     it "get an array of values for an array of input web replacement strings" do
       response = api.get_web_replacement_vals({"in_replacement_names" => "One|Two"})
