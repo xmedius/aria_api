@@ -17,7 +17,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Tue, 27 Mar 2012 20:21:29 GMT
+      - Tue, 27 Mar 2012 20:30:52 GMT
       Server:
       - Apache
       Last-Modified:
@@ -29,7 +29,7 @@ http_interactions:
       Content-Type:
       - application/wsdl+xml
       Set-Cookie:
-      - citrix_ns_id=DdnYd18FX+2IhFZ1+LyXNpBQAXgA0; Domain=.future.stage.ariasystems.net;
+      - citrix_ns_id=2/bZQ6TsbsyHamFtmlHBmce1rD4A0; Domain=.future.stage.ariasystems.net;
         Path=/; HttpOnly
       Transfer-Encoding:
       - Chunked
@@ -6645,5 +6645,5 @@ http_interactions:
         location=\"https://secure.future.stage.ariasystems.net/api/ws/api_ws_class_dispatcher.php\"/>\n
         \   </port>\n  </service>\n</definitions>\n\n"
     http_version: 
-  recorded_at: Tue, 27 Mar 2012 20:21:42 GMT
+  recorded_at: Tue, 27 Mar 2012 20:31:05 GMT
 recorded_with: VCR 2.0.0
