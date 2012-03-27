@@ -54,4 +54,14 @@ describe "Other-Special" do
 			response.should have_key("error_msg")
 		end  
 	end
+
+	describe "self.save_paypal_bill_agreement(params)", :vcr do
+		it "Confirms that a billing agreement has been accepted by a specified account holder and that PayPal is ablo to authorize a payment based on that billing agreement." do
+			params = {"acct_no" => 1, "token" => "test"}
+			response = api.save_paypal_bill_agreement params
+
+			response.should have_key("error_code")
+			response.should have_key("error_msg")
+		end
+	end
 end
