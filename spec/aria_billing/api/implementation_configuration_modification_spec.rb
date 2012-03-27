@@ -103,4 +103,14 @@ describe "Implementation Configuration Modification" do
           response.should have_key("error_msg")
       end
    end
+
+   describe "self.set_session(params)", :vcr do
+      it "Starts an Aria session for a specified user ID" do
+          response = api.set_session
+
+          response.should have_key("error_code")
+          response.should have_key("error_msg")
+          response.should have_key("session_id")
+      end
+   end
 end

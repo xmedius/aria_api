@@ -57,6 +57,6 @@ module AriaBilling
               'toggle_test_account','assign_supp_plan_multi','disable_all_standing_usage',
               'disable_standing_usage_by_plan','get_acct_tax_exempt_status','get_client_items',
               'keep_alive','kill_session','set_acct_tax_exempt_status',
-              'set_prov_engine']
+              'set_prov_engine','set_session']
   end
 end
