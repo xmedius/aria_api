@@ -59,6 +59,6 @@ module AriaBilling
               'keep_alive','kill_session','set_acct_tax_exempt_status',
               'set_prov_engine','set_session','set_session_auth',
               'subscribe_event','subscribe_event_class','subscribe_events',
-              'unsubscribe_event']
+              'unsubscribe_event','unsubscribe_event_class']
   end
 end
