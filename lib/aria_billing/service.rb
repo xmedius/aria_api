@@ -49,6 +49,6 @@ module AriaBilling
               'get_inv_no_from_bal_xfer','get_items_by_class','get_items_by_supp_field',
               'get_master_plans_by_supp_field','get_parent_for_item_class','get_plans_by_promo_code',
               'get_plans_by_promo_code_all','get_rate_schedules_for_plan','get_reg_uss_config_params',
-              'get_reg_uss_params','get_supp_plans_by_promo_code']
+              'get_reg_uss_params','get_supp_plans_by_promo_code','get_supp_plans_by_promo_code_all']
   end
 end

@@ -316,6 +316,17 @@ describe "Implementation Configuration Retrieval" do
 
       response.should have_key("error_code")
       response.should have_key("error_msg")
+      response.should have_key("plans")
+    end
+  end
+
+  describe "self.get_supp_plans_by_promo_code_all(params)",:vcr do
+    it "Returns a detailed list of supplemental plans associated with a specified promotion code" do
+      response = api.get_supp_plans_by_promo_code_all  
+
+      response.should have_key("error_code")
+      response.should have_key("error_msg")
+      response.should have_key("all_plans")
     end
   end
 
