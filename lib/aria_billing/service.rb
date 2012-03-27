@@ -56,6 +56,6 @@ module AriaBilling
               'get_all_client_receipt_ids','init_paypal_bill_agreement','save_paypal_bill_agreement',
               'toggle_test_account','assign_supp_plan_multi','disable_all_standing_usage',
               'disable_standing_usage_by_plan','get_acct_tax_exempt_status','get_client_items',
-              'keep_alive','kill_session']
+              'keep_alive','kill_session','set_acct_tax_exempt_status']
   end
 end

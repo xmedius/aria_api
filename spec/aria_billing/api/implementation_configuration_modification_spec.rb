@@ -85,4 +85,13 @@ describe "Implementation Configuration Modification" do
           response.should have_key("error_msg")
       end
    end
+
+   describe "self.set_acct_tax_exempt_status(params)", :vcr do
+      it "Sets the tax exemption level for a specified account" do
+          response = api.set_acct_tax_exempt_status ({ "acct_no" => 1})
+
+          response.should have_key("error_code")
+          response.should have_key("error_msg")
+      end
+   end
 end
