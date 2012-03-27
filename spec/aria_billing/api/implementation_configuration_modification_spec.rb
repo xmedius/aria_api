@@ -113,4 +113,14 @@ describe "Implementation Configuration Modification" do
           response.should have_key("session_id")
       end
    end
+
+   describe "self.set_session_auth(params)", :vcr do
+      it "Authenticates a customer who logs into a User Self Service application with a user ID and password" do
+          response = api.set_session_auth
+
+          response.should have_key("error_code")
+          response.should have_key("error_msg")
+          response.should have_key("session_id")
+      end
+   end
 end
