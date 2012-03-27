@@ -142,4 +142,13 @@ describe "Implementation Configuration Modification" do
           response.should have_key("events")
       end
    end
+
+   describe "self.subscribe_events(params)", :vcr do
+      it "Subscribe a client to a specified group of event notifications" do
+          response = api.subscribe_events ({ "event_list" => '113' })
+
+          response.should have_key("error_code")
+          response.should have_key("error_msg")
+      end
+   end
 end
