@@ -67,4 +67,13 @@ describe "Implementation Configuration Modification" do
           response.should have_key("error_msg")
       end
    end
+
+   describe "self.keep_alive(params)", :vcr do
+      it "Increase the given valid session's expiry time by the number of minutes pre-defined for the client" do
+          response = api.keep_alive ({ "session_id" => 'Test' })
+
+          response.should have_key("error_code")
+          response.should have_key("error_msg")
+      end
+   end
 end
