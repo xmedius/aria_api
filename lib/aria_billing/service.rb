@@ -53,6 +53,7 @@ module AriaBilling
               'get_supp_plans_by_supp_field','get_top_level_item_class','pre_calc_invoice',
               'replace_reg_uss_config_params','replace_reg_uss_params','set_reg_uss_config_params',
               'set_reg_uss_params','get_all_acct_receipt_ids','get_all_actions_by_receipt_id',
-              'get_all_client_receipt_ids','init_paypal_bill_agreement','save_paypal_bill_agreement']
+              'get_all_client_receipt_ids','init_paypal_bill_agreement','save_paypal_bill_agreement',
+              'toggle_test_account']
   end
 end
