@@ -162,12 +162,21 @@ describe "Implementation Configuration Modification" do
    end
 
    describe "self.unsubscribe_event_class(params)", :vcr do
-      it "Unubscribe a client from a specified event notification" do
+      it "Unubscribe a client from a specified event class" do
           response = api.unsubscribe_event_class ({ "class_no" => 113 })
 
           response.should have_key("error_code")
           response.should have_key("error_msg")
           response.should have_key("events")
+      end
+   end
+
+   describe "self.unsubscribe_events(params)", :vcr do
+      it "Unubscribes a client from a group of specified event notifications" do
+          response = api.unsubscribe_events ({ "event_list" => '113' })
+
+          response.should have_key("error_code")
+          response.should have_key("error_msg")
       end
    end
 end
