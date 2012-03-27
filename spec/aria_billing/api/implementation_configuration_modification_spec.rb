@@ -57,4 +57,14 @@ describe "Implementation Configuration Modification" do
           response.should have_key("exemption_level_desc")
      end
    end
+
+   describe "self.get_client_items(params)", :vcr do
+      it "Returns a list of inventory items associated with a client" do
+          response = api.get_client_items
+
+          response.should have_key("client_items")
+          response.should have_key("error_code")
+          response.should have_key("error_msg")
+      end
+   end
 end
