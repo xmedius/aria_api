@@ -1,0 +1,34 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://secure.future.stage.ariasystems.net/api/ws/api_ws_class_dispatcher.php
+    body:
+      encoding: US-ASCII
+      string: output_format=json&auth_key=8Vn848nuRPa58jht9jBBpWvSUVsn3fnB&client_no=4950701&rest_call=get_client_plan_service_rates&plan_no=1&service_no=1
+    headers: {}
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Mon, 26 Mar 2012 19:28:46 GMT
+      Server:
+      - Apache
+      Content-Length:
+      - '94'
+      Content-Type:
+      - application/json
+      Set-Cookie:
+      - citrix_ns_id=dquL0bEjolzPCLH7bnLOszE6gMsA0; Domain=.future.stage.ariasystems.net;
+        Path=/; HttpOnly
+    body:
+      encoding: US-ASCII
+      string: ! '{"plan_service_rates":null,"error_code":14005,"error_msg":"invalid
+        plan service combination"}
+
+'
+    http_version: 
+  recorded_at: Mon, 26 Mar 2012 19:28:45 GMT
+recorded_with: VCR 2.0.0

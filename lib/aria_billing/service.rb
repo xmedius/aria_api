@@ -43,13 +43,21 @@ module AriaBilling
               'client_has_event_class','delete_reg_uss_config_params','delete_reg_uss_params',
               'get_acct_groups_by_client','get_acct_payment_methods','get_auf_status',
               'get_avail_child_plans_for_plan','get_avail_child_plans_for_plan_all','get_available_plans',
-              'get_available_plans_all','get_child_for_item_class']
+              'get_available_plans_all','get_child_for_item_class','get_client_currencies',
+              'get_client_plan_service_rates','get_client_plan_services','get_client_plans_all',
+              'get_client_plans_basic','get_current_system_version','get_email_templates',
+              'get_inv_no_from_bal_xfer','get_items_by_class','get_items_by_supp_field',
+              'get_master_plans_by_supp_field','get_parent_for_item_class','get_plans_by_promo_code',
+              'get_plans_by_promo_code_all','get_rate_schedules_for_plan','get_reg_uss_config_params',
+              'get_reg_uss_params','get_supp_plans_by_promo_code','get_supp_plans_by_promo_code_all',
+              'get_supp_plans_by_supp_field','get_top_level_item_class','pre_calc_invoice',
+              'replace_reg_uss_config_params','replace_reg_uss_params','set_reg_uss_config_params',
+              'set_reg_uss_params']
 
     def self.actions
       url = "https://secure.future.stage.ariasystems.net/api/Advanced/wsdl/5.7/complete-doc_literal_wrapped.wsdl"
       client = Savon::Client.new url
       client.wsdl.soap_actions
     end
-
   end
 end
