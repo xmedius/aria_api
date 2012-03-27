@@ -94,4 +94,13 @@ describe "Implementation Configuration Modification" do
           response.should have_key("error_msg")
       end
    end
+
+   describe "self.set_prov_engine(params)", :vcr do
+      it "Specifies whether a client should receive event notification messages" do
+          response = api.set_prov_engine
+
+          response.should have_key("error_code")
+          response.should have_key("error_msg")
+      end
+   end
 end
