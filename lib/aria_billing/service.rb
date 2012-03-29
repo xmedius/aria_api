@@ -1,7 +1,8 @@
 module AriaBilling
   class Service
     def self.actions
-      url = "https://secure.future.stage.ariasystems.net/api/Advanced/wsdl/5.14/complete-doc_literal_wrapped.wsdl"
+      api_version = AriaBilling::Configuration.api_version
+      url = "https://secure.future.stage.ariasystems.net/api/Advanced/wsdl/#{api_version}/complete-doc_literal_wrapped.wsdl"
       client = Savon::Client.new url
       @actions ||= client.wsdl.soap_actions
     end
