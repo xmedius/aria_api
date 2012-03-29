@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe "Account Communication Creation" do
-  describe "self.gen_statement(params)",:vcr do
+  describe "self.gen_statement(params)", :vcr do
     it "Generates a statement based on an invoice that has not been inluded in a statement" do
       response = api.gen_statement({"acct_no" => 1})
 

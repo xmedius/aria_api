@@ -1,9 +1,10 @@
 module AriaBilling
   class Configuration
-    ATTS = [ :auth_key, :client_no, :url ]
+    REQUIRED_ATTS = [ :auth_key, :client_no, :url ]
 
     class << self
-      attr_writer *ATTS
+      attr_writer *REQUIRED_ATTS
+      attr_writer :api_version
     end
 
     def self.required_attribute(*attributes) # :nodoc:
@@ -15,10 +16,14 @@ module AriaBilling
         end
       end
     end
-    required_attribute *ATTS
+    required_attribute *REQUIRED_ATTS
 
     def self.credentials
       { auth_key: auth_key, client_no: client_no }
+    end
+
+    def self.api_version
+      @api_version ||= "5.14"
     end
   end
 end

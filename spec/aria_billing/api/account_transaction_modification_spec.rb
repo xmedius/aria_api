@@ -35,6 +35,7 @@ describe "Account Transaction Modification" do
 
   describe "self.assing_custom_acct_rate(params)",:vcr do
     it "Applies custom rates to a particular plan and service assigned to specified account" do
+      pending "Not Available in WSDL 5.14"
       params = { "acct_no" => 1, "plan_no" => 1, "service_no" => 1, "custom_acct_rates" => { "rate_seq_no" => 1, "rate_per_unit" => 2, "from_unit" => 1, "to_unit" => 2 } }
       response = api.assing_custom_acct_rate params
 
@@ -81,6 +82,7 @@ describe "Account Transaction Modification" do
 
   describe "self.create_advaced_service_credit(params)",:vcr do
     it "Creates a one-time service credit or recurring service credit for a specified account" do
+      pending "Not Available in WSDL 5.14"
       response = api.create_advaced_service_credit ({ "acct_no" => 1 })
 
       response.should have_key("error_code")

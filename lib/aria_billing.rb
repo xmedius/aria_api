@@ -1,5 +1,6 @@
 require "httparty"
 require "json"
+require "savon"
 require "aria_billing/exceptions"
 require "aria_billing/configuration"
 require 'aria_billing/service'
@@ -9,7 +10,7 @@ module AriaBilling
 
   def self.make_request(opts={})
     opts = request_defaults.merge opts
-    post(AriaBilling::Configuration.url, body: opts)
+    post AriaBilling::Configuration.url, body: opts
   end
 
   def self.request_defaults
@@ -17,7 +18,7 @@ module AriaBilling
   end
 
   class << self
-    AriaBilling::Service::CALLS.each do |call_name|
+    AriaBilling::Service.actions.each do |call_name|
       define_method(call_name) do |opts={}|
         params = { rest_call: call_name }.merge(opts)
         make_request params
