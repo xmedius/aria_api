@@ -10,7 +10,7 @@ module AriaBilling
 
   def self.make_request(opts={})
     opts = request_defaults.merge opts
-    post(AriaBilling::Configuration.url, body: opts)
+    post AriaBilling::Configuration.url, body: opts
   end
 
   def self.request_defaults
