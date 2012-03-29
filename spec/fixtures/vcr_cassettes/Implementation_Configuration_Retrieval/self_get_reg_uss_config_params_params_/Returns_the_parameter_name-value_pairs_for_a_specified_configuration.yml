@@ -5,7 +5,7 @@ http_interactions:
     uri: https://secure.future.stage.ariasystems.net/api/ws/api_ws_class_dispatcher.php
     body:
       encoding: US-ASCII
-      string: output_format=json&auth_key=8Vn848nuRPa58jht9jBBpWvSUVsn3fnB&client_no=4950701&rest_call=get_reg_uss_config_params&set_name=1
+      string: output_format=json&auth_key=8Vn848nuRPa58jht9jBBpWvSUVsn3fnB&client_no=4950701&rest_call=get_reg_uss_config_params&set_name=Test
     headers: {}
   response:
     status:
@@ -13,7 +13,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Mon, 26 Mar 2012 22:59:45 GMT
+      - Tue, 27 Mar 2012 20:30:25 GMT
       Server:
       - Apache
       Content-Length:
@@ -21,7 +21,7 @@ http_interactions:
       Content-Type:
       - application/json
       Set-Cookie:
-      - citrix_ns_id=aDT35djq2D6PsiDRsN2nZ2d77HYA0; Domain=.future.stage.ariasystems.net;
+      - citrix_ns_id=Oex5B3Nk/AFManjCkpWNIPPgZ94A0; Domain=.future.stage.ariasystems.net;
         Path=/; HttpOnly
     body:
       encoding: US-ASCII
@@ -29,5 +29,5 @@ http_interactions:
 
 '
     http_version: 
-  recorded_at: Mon, 26 Mar 2012 22:59:41 GMT
+  recorded_at: Tue, 27 Mar 2012 20:30:28 GMT
 recorded_with: VCR 2.0.0

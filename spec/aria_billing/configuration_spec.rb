@@ -4,20 +4,20 @@ describe AriaBilling::Configuration do
 
   describe "self.auth_key" do
     it "raises an exception if it hasn't been set yet" do
-      AriaBilling::Configuration.instance_variable_set(:@auth_key, nil)
+      conf.instance_variable_set(:@auth_key, nil)
 
       expect {
-        AriaBilling::Configuration.auth_key
+        conf.auth_key
       }.to raise_error(AriaBilling::ConfigurationError, "AriaBilling::Configuration.auth_key needs to be set")
     end
   end
 
   describe "self.client_no" do
     it "raises an exception if it hasn't been set yet" do
-      AriaBilling::Configuration.instance_variable_set(:@client_no, nil)
+      conf.instance_variable_set(:@client_no, nil)
 
       expect {
-        AriaBilling::Configuration.client_no
+        conf.client_no
       }.to raise_error(AriaBilling::ConfigurationError, "AriaBilling::Configuration.client_no needs to be set")
     end
   end
@@ -25,20 +25,35 @@ describe AriaBilling::Configuration do
 
   describe "self.url" do
     it "raises an exception if it hasn't been set yet" do
-      AriaBilling::Configuration.instance_variable_set(:@url, nil)
+      conf.instance_variable_set(:@url, nil)
 
       expect {
-        AriaBilling::Configuration.url
+        conf.url
       }.to raise_error(AriaBilling::ConfigurationError, "AriaBilling::Configuration.url needs to be set")
     end
   end
 
   describe "self.credentials" do
     it "returns a hash of :auth_key and :auth_key" do
-      AriaBilling::Configuration.auth_key = "1234"
-      AriaBilling::Configuration.client_no = "5678"
-      AriaBilling::Configuration.credentials.should == { auth_key: "1234", client_no: "5678" }
+      conf.auth_key = "1234"
+      conf.client_no = "5678"
+      conf.credentials.should == { auth_key: "1234", client_no: "5678" }
     end
+  end
+
+  describe "self.api_version" do
+    it "returns 5.14 by default" do
+      conf.api_version.should == "5.14"
+    end
+
+    it "can be overridden" do
+      conf.api_version = "5.15"
+      conf.api_version.should == "5.15"
+    end
+  end
+
+  def conf
+    AriaBilling::Configuration
   end
 
   after(:all) do

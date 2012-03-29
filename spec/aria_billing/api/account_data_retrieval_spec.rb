@@ -318,6 +318,7 @@ describe "Account Data Retrieval" do
 
   describe "self.get_userid_from_acct_no(params)", :vcr do
     it "Returns the user ID associated with a specified account number" do
+      pending "Not Available in WSDL 5.14"
       response = api.get_userid_from_acct_no({ "acct_no" => 1 })
 
       response.should have_key("error_code")
