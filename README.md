@@ -22,7 +22,7 @@ In Rails. You could define specific configuration for each environment.
 
 There's also a parameter to define the version of the Aria API you want to use. Default is 5.14
 
-    AriaBilling::Configuration.auth_key = "5.15"
+    AriaBilling::Configuration.api_version = "5.15"
 
 
 ## Usage
