@@ -14,8 +14,8 @@ Gem::Specification.new do |s|
 
   s.rubyforge_project = "aria_billing"
 
-  s.files         = `git ls-files`.split("\n")
-  # s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
+  s.files         = `git ls-files`.split("\n").delete_if { |f| f.match /vcr_cassettes/ }
+  s.test_files    = `git ls-files -- spec/*`.split("\n").delete_if { |f| f.match /vcr_cassettes/ }
   s.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
   s.require_paths = ["lib"]
 
