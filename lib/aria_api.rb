@@ -14,7 +14,7 @@ module AriaApi
   end
 
   def self.request_defaults
-    { output_format: "json" }.merge AriaApi::Configuration.credentials
+    { :output_format => "json" }.merge AriaApi::Configuration.credentials
   end
 
   class << self
