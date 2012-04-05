@@ -47,7 +47,7 @@ describe "Implementation Configuration Modification" do
    end
 
    describe "self.get_acct_tax_exempt_status(params)", :vcr do
-      it "Returns an account's tax exemption level (none, federal, state, or both federal and state)." do
+      it "Returns an account's tax exemption level(none, federal, state, or both federal and state)." do
           params = {"acct_no" => 1}
           response = api.get_acct_tax_exempt_status params
 
@@ -70,7 +70,7 @@ describe "Implementation Configuration Modification" do
 
    describe "self.keep_alive(params)", :vcr do
       it "Increase the given valid session's expiry time by the number of minutes pre-defined for the client" do
-          response = api.keep_alive ({ "session_id" => 'Test' })
+          response = api.keep_alive({ "session_id" => 'Test' })
 
           response.should have_key("error_code")
           response.should have_key("error_msg")
@@ -88,7 +88,7 @@ describe "Implementation Configuration Modification" do
 
    describe "self.set_acct_tax_exempt_status(params)", :vcr do
       it "Sets the tax exemption level for a specified account" do
-          response = api.set_acct_tax_exempt_status ({ "acct_no" => 1})
+          response = api.set_acct_tax_exempt_status({ "acct_no" => 1})
 
           response.should have_key("error_code")
           response.should have_key("error_msg")
@@ -126,7 +126,7 @@ describe "Implementation Configuration Modification" do
 
    describe "self.subscribe_event(params)", :vcr do
       it "Subscribe a client to a specified event notification" do
-          response = api.subscribe_event ({ "event_id" => 1 })
+          response = api.subscribe_event({ "event_id" => 1 })
 
           response.should have_key("error_code")
           response.should have_key("error_msg")
@@ -135,7 +135,7 @@ describe "Implementation Configuration Modification" do
 
    describe "self.subscribe_event_class(params)", :vcr do
       it "Subscribe a client to a specified event class" do
-          response = api.subscribe_event_class ({ "class_no" => 1 })
+          response = api.subscribe_event_class({ "class_no" => 1 })
 
           response.should have_key("error_code")
           response.should have_key("error_msg")
@@ -145,7 +145,7 @@ describe "Implementation Configuration Modification" do
 
    describe "self.subscribe_events(params)", :vcr do
       it "Subscribe a client to a specified group event notification" do
-          response = api.subscribe_events ({ "event_list" => '113' })
+          response = api.subscribe_events({ "event_list" => '113' })
 
           response.should have_key("error_code")
           response.should have_key("error_msg")
@@ -154,7 +154,7 @@ describe "Implementation Configuration Modification" do
 
    describe "self.unsubscribe_event(params)", :vcr do
       it "Unubscribe a client from a specified event notification" do
-          response = api.unsubscribe_event ({ "event_id" => 113 })
+          response = api.unsubscribe_event({ "event_id" => 113 })
 
           response.should have_key("error_code")
           response.should have_key("error_msg")
@@ -163,7 +163,7 @@ describe "Implementation Configuration Modification" do
 
    describe "self.unsubscribe_event_class(params)", :vcr do
       it "Unubscribe a client from a specified event class" do
-          response = api.unsubscribe_event_class ({ "class_no" => 113 })
+          response = api.unsubscribe_event_class({ "class_no" => 113 })
 
           response.should have_key("error_code")
           response.should have_key("error_msg")
@@ -173,7 +173,7 @@ describe "Implementation Configuration Modification" do
 
    describe "self.unsubscribe_events(params)", :vcr do
       it "Unubscribes a client from a group of specified event notifications" do
-          response = api.unsubscribe_events ({ "event_list" => '113' })
+          response = api.unsubscribe_events({ "event_list" => '113' })
 
           response.should have_key("error_code")
           response.should have_key("error_msg")
@@ -189,7 +189,7 @@ describe "Implementation Configuration Modification" do
 
    describe "self.update_master_plan(params)", :vcr do
       it "Changes the master plan assigned to a specified account holder" do
-          response = api.update_master_plan ({ "acct_no" => 1 })
+          response = api.update_master_plan({ "acct_no" => 1 })
 
           response.should have_key("error_code")
           response.should have_key("proration_result_amount")

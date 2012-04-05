@@ -3,7 +3,7 @@ require 'spec_helper'
 describe "Account Transaction Creation" do
   describe "self.authorize_electronic_payment(params)",:vcr do
     it "Authorize a credit card for a specified amount" do
-      response = api.authorize_electronic_payment ({ "account_number" => 1, "amount" => 20000 })
+      response = api.authorize_electronic_payment({ "account_number" => 1, "amount" => 20000 })
 
       response.should have_key("error_code")
       response.should have_key("error_msg")
@@ -20,7 +20,7 @@ describe "Account Transaction Creation" do
 
    describe "self.collect_from_account(params)",:vcr do
     it "Collects a specified amount from a specified account holder using the electronic method of payment on file" do
-      response = api.collect_from_account ({ "account_no" => 1, "amount_to_collect" => 20000 })
+      response = api.collect_from_account({ "account_no" => 1, "amount_to_collect" => 20000 })
 
       response.should have_key("error_code")
       response.should have_key("error_msg")
@@ -87,7 +87,7 @@ describe "Account Transaction Creation" do
 
   describe "self.gen_invoice(params)",:vcr do
   	it "Generates an incoice for a specified account" do
-  	  response = api.gen_invoice ({ "acct_no" => 1 })
+  	  response = api.gen_invoice({ "acct_no" => 1 })
 
   	  response.should have_key("error_code")
   	  response.should have_key("error_msg")
@@ -97,7 +97,7 @@ describe "Account Transaction Creation" do
 
   describe "self.manage_pending_invoice(params)",:vcr do
   	it "Approves,discards,or regenerates a pending invoice" do
-  	  response = api.manage_pending_invoice ({ "acct_no" => 1 })
+  	  response = api.manage_pending_invoice({ "acct_no" => 1 })
 
   	  response.should have_key("new_invoice_no")
   	  response.should have_key("collection_error_code")
@@ -119,7 +119,7 @@ describe "Account Transaction Creation" do
 
   describe "self.record_external_payment(params)",:vcr do
     it "Records a payment transaction for a payment collected from an account holder without using Aria" do
-      response = api.record_external_payment ({ "account_no" => 1, "payment_amount" => 20000 })
+      response = api.record_external_payment({ "account_no" => 1, "payment_amount" => 20000 })
 
       response.should have_key("error_code")
       response.should have_key("error_msg")
@@ -129,7 +129,7 @@ describe "Account Transaction Creation" do
 
   describe "self.record_out_going_payment(params)",:vcr do
     it "Record remittance to net terms accounts" do
-      response = api.record_out_going_payment ({ "account_no" => 1, "payment_amount" => 20000 })
+      response = api.record_out_going_payment({ "account_no" => 1, "payment_amount" => 20000 })
 
       response.should have_key("error_code")
       response.should have_key("error_msg")
@@ -139,7 +139,7 @@ describe "Account Transaction Creation" do
 
   describe "self.record_standing_usage(params)",:vcr do
     it "Creates a new standing usage record for a specified account" do
-      response = api.record_standing_usage ({ "acct_no" => 1 })
+      response = api.record_standing_usage({ "acct_no" => 1 })
 
       response.should have_key("error_code")
       response.should have_key("error_msg")
@@ -148,7 +148,7 @@ describe "Account Transaction Creation" do
 
   describe "self.record_usage(params)",:vcr do
     it "Creates a usage record for a specified account for inclusion in a future invoice" do
-      response = api.record_usage ({ "usage_type" => 1, "usage_units" => 100 })
+      response = api.record_usage({ "usage_type" => 1, "usage_units" => 100 })
 
       response.should have_key("error_code")
       response.should have_key("error_msg")
@@ -158,7 +158,7 @@ describe "Account Transaction Creation" do
 
   describe "self.settle_account_balance(params)",:vcr do
     it "Collects the outsanding balance from a specified account holder" do
-      response = api.settle_account_balance ({ "account_no" => 1 })
+      response = api.settle_account_balance({ "account_no" => 1 })
 
       response.should have_key("transaction_id")
       response.should have_key("proc_cvv_response")

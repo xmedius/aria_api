@@ -14,7 +14,7 @@ describe "Account Transaction Modification" do
 
   describe "self.apply_coupon_to_acct(params)",:vcr do
     it "Assigns a coupon code to a specified account" do
-      response = api.apply_coupon_to_acct ({ "acct_no" => 1})
+      response = api.apply_coupon_to_acct({ "acct_no" => 1})
 
       response.should have_key("error_code")
       response.should have_key("error_msg")
@@ -46,7 +46,7 @@ describe "Account Transaction Modification" do
 
   describe "self.cancel_order(params)",:vcr do
     it "Cancels an account holder's order and stops all billing related to the order if the following are true" do
-      response = api.cancel_order ({ "acct_no" => 1, "order_no" => 1 })
+      response = api.cancel_order({ "acct_no" => 1, "order_no" => 1 })
 
       response.should have_key("error_code")
       response.should have_key("error_msg")
@@ -55,7 +55,7 @@ describe "Account Transaction Modification" do
 
   describe "self.cancel_queued_service_plan(params)",:vcr do
     it "Cancels all plan changes scheduled to go into effect for a specified account" do
-      response = api.cancel_queued_service_plan ({ "account_number" => 1 })
+      response = api.cancel_queued_service_plan({ "account_number" => 1 })
 
       response.should have_key("error_code")
       response.should have_key("error_msg")
@@ -64,7 +64,7 @@ describe "Account Transaction Modification" do
 
   describe "self.cancel_standing_order(params)",:vcr do
     it "Cancels all future orders in a standing order" do
-      response = api.cancel_standing_order ({ "standing_order_no" => 1 })
+      response = api.cancel_standing_order({ "standing_order_no" => 1 })
 
       response.should have_key("error_code")
       response.should have_key("error_msg")
@@ -73,7 +73,7 @@ describe "Account Transaction Modification" do
 
   describe "self.cancel_unconsumed_credit(params)",:vcr do
     it "Deletes all unused credits associated with a particular coupon" do
-      response = api.cancel_unconsumed_credit ({ "acct_no" => 1, "coupon_cd" => 1 })
+      response = api.cancel_unconsumed_credit({ "acct_no" => 1, "coupon_cd" => 1 })
 
       response.should have_key("error_code")
       response.should have_key("error_msg")
@@ -83,7 +83,7 @@ describe "Account Transaction Modification" do
   describe "self.create_advaced_service_credit(params)",:vcr do
     it "Creates a one-time service credit or recurring service credit for a specified account" do
       pending "Not Available in WSDL 5.14"
-      response = api.create_advaced_service_credit ({ "acct_no" => 1 })
+      response = api.create_advaced_service_credit({ "acct_no" => 1 })
 
       response.should have_key("error_code")
       response.should have_key("error_msg")
@@ -92,7 +92,7 @@ describe "Account Transaction Modification" do
 
   describe "self.disable_standing_usage(params)",:vcr do
     it "Disables a particular standing usage record for a specified account" do
-      response = api.disable_standing_usage ({ "acct_no" => 1, "standing_usage_rec_no" => 1 })
+      response = api.disable_standing_usage({ "acct_no" => 1, "standing_usage_rec_no" => 1 })
 
       response.should have_key("error_code")
       response.should have_key("error_msg")
@@ -112,7 +112,7 @@ describe "Account Transaction Modification" do
 
   describe "self.reinstate_transaction(params)",:vcr do
     it "Reinstates a previously voided transaction associated with a specified account number and transaction ID" do
-      response = api.reinstate_transaction ({ "account_no" => 1, "transaction_id" => 1 })
+      response = api.reinstate_transaction({ "account_no" => 1, "transaction_id" => 1 })
 
       response.should have_key("error_code")
       response.should have_key("error_msg")
@@ -134,7 +134,7 @@ describe "Account Transaction Modification" do
 
   describe "self.update_acct_billing_contact(params)",:vcr do
     it "Updates the billing contact information for a specified account" do
-      response = api.update_acct_billing_contact ({ "account_no" => 1 })
+      response = api.update_acct_billing_contact({ "account_no" => 1 })
 
       response.should have_key("error_code")
       response.should have_key("collection_error_code")
