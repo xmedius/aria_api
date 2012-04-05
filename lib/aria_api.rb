@@ -19,7 +19,9 @@ module AriaApi
 
   class << self
     AriaApi::Service.actions.each do |call_name|
-      define_method(call_name) do |opts={}|
+      # Poor-man's default block arguments for 1.8.7 with *args.
+      define_method(call_name) do |*args|
+        opts = args[0] || {}
         params = { :rest_call => call_name }.merge(opts)
         make_request params
       end
