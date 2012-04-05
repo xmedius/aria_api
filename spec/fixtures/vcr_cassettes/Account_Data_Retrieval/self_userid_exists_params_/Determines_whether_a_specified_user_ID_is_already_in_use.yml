@@ -13,19 +13,15 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Thu, 05 Apr 2012 17:07:48 GMT
+      - Thu, 05 Apr 2012 17:30:11 GMT
       Server:
       - Apache
       Content-Length:
       - '57'
-      Keep-Alive:
-      - timeout=15, max=95
-      Connection:
-      - Keep-Alive
       Content-Type:
       - application/json
       Set-Cookie:
-      - citrix_ns_id=aNut4prhPvdNdunXkqlRYFGpIrsA0; Domain=.future.stage.ariasystems.net;
+      - citrix_ns_id=mPqCkbuMMLDvfkSnfrxWx0WXfXAA0; Domain=.future.stage.ariasystems.net;
         Path=/; HttpOnly
     body:
       encoding: US-ASCII
@@ -33,5 +29,5 @@ http_interactions:
 
 '
     http_version: 
-  recorded_at: Thu, 05 Apr 2012 17:07:49 GMT
+  recorded_at: Thu, 05 Apr 2012 17:30:11 GMT
 recorded_with: VCR 2.0.0
