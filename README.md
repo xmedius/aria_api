@@ -31,7 +31,11 @@ AriaBilling supports most of the API features defined in [https://developer.aria
 
 Just call the service name as an AriaBilling method, the options are the same as the specified in the API docs.
 
-Note you don't need to pass credentials.
+    AriaBilling.get_country_from_ip(ip_address: "207.97.227.239")
+    # { "country_code" => "US", "country_name" => "United States", "error_code" => 0, "error_msg" => "OK" }
 
+Note you don't need to pass credentials since they're already defined in the configuration module.
 
 ## Demo Application
+
+pending
