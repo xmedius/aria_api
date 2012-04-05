@@ -1,4 +1,4 @@
-require "aria_billing"
+require "aria_api"
 require "vcr"
 
 VCR.configure do |c|
@@ -11,13 +11,13 @@ end
 
 module SupportSpecHelper
   def self.use_development_credentials
-    AriaBilling::Configuration.auth_key = "8Vn848nuRPa58jht9jBBpWvSUVsn3fnB"
-    AriaBilling::Configuration.client_no = "4950701"
-    AriaBilling::Configuration.url = "https://secure.future.stage.ariasystems.net/api/ws/api_ws_class_dispatcher.php"
+    AriaApi::Configuration.auth_key = "8Vn848nuRPa58jht9jBBpWvSUVsn3fnB"
+    AriaApi::Configuration.client_no = "4950701"
+    AriaApi::Configuration.url = "https://secure.future.stage.ariasystems.net/api/ws/api_ws_class_dispatcher.php"
   end
 
   def api
-    AriaBilling
+    AriaApi
   end
 end
 

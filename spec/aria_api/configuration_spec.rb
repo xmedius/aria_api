@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe AriaBilling::Configuration do
+describe AriaApi::Configuration do
 
   describe "self.auth_key" do
     it "raises an exception if it hasn't been set yet" do
@@ -8,7 +8,7 @@ describe AriaBilling::Configuration do
 
       expect {
         conf.auth_key
-      }.to raise_error(AriaBilling::ConfigurationError, "AriaBilling::Configuration.auth_key needs to be set")
+      }.to raise_error(AriaApi::ConfigurationError, "AriaApi::Configuration.auth_key needs to be set")
     end
   end
 
@@ -18,7 +18,7 @@ describe AriaBilling::Configuration do
 
       expect {
         conf.client_no
-      }.to raise_error(AriaBilling::ConfigurationError, "AriaBilling::Configuration.client_no needs to be set")
+      }.to raise_error(AriaApi::ConfigurationError, "AriaApi::Configuration.client_no needs to be set")
     end
   end
 
@@ -29,7 +29,7 @@ describe AriaBilling::Configuration do
 
       expect {
         conf.url
-      }.to raise_error(AriaBilling::ConfigurationError, "AriaBilling::Configuration.url needs to be set")
+      }.to raise_error(AriaApi::ConfigurationError, "AriaApi::Configuration.url needs to be set")
     end
   end
 
@@ -53,7 +53,7 @@ describe AriaBilling::Configuration do
   end
 
   def conf
-    AriaBilling::Configuration
+    AriaApi::Configuration
   end
 
   after(:all) do

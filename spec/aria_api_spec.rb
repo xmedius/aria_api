@@ -1,10 +1,10 @@
 require 'spec_helper'
 
-describe AriaBilling do
+describe AriaApi do
   before(:each) do
-    AriaBilling::Configuration.auth_key = "auth_key"
-    AriaBilling::Configuration.client_no = "client_no"
-    AriaBilling::Configuration.url = "url"
+    AriaApi::Configuration.auth_key = "auth_key"
+    AriaApi::Configuration.client_no = "client_no"
+    AriaApi::Configuration.url = "url"
   end
 
   describe "self.make_request(params)" do
@@ -24,7 +24,7 @@ describe AriaBilling do
     end
 
     def aria
-      AriaBilling
+      AriaApi
     end
 
     def expects_call(params)

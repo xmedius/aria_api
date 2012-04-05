@@ -1,4 +1,4 @@
-module AriaBilling
+module AriaApi
   class Configuration
     REQUIRED_ATTS = [ :auth_key, :client_no, :url ]
 
