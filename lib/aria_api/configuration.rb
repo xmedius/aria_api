@@ -19,7 +19,7 @@ module AriaApi
     required_attribute *REQUIRED_ATTS
 
     def self.credentials
-      { auth_key: auth_key, client_no: client_no }
+      { :auth_key => auth_key, :client_no => client_no }
     end
 
     def self.api_version

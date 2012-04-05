@@ -37,7 +37,7 @@ describe AriaApi::Configuration do
     it "returns a hash of :auth_key and :auth_key" do
       conf.auth_key = "1234"
       conf.client_no = "5678"
-      conf.credentials.should == { auth_key: "1234", client_no: "5678" }
+      conf.credentials.should == { :auth_key => "1234", :client_no => "5678" }
     end
   end
 
