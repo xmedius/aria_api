@@ -13,22 +13,26 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Tue, 27 Mar 2012 20:26:37 GMT
+      - Thu, 05 Apr 2012 17:07:20 GMT
       Server:
       - Apache
       Content-Length:
-      - '363'
+      - '398'
+      Keep-Alive:
+      - timeout=15, max=100
+      Connection:
+      - Keep-Alive
       Content-Type:
       - application/json
       Set-Cookie:
-      - citrix_ns_id=kQZWy7pgQSRrHmmhQfSl52xuED4A0; Domain=.future.stage.ariasystems.net;
+      - citrix_ns_id=azbDnXr6Pt6Hm01pCq9I4AxsEBkA0; Domain=.future.stage.ariasystems.net;
         Path=/; HttpOnly
     body:
       encoding: US-ASCII
-      string: ! '{"error_code":1023,"acct_no":null,"out_userid":null,"invoicing_error_code":null,"invoicing_error_msg":null,"invoice_no":null,"proc_cvv_response":null,"proc_avs_response":null,"proc_cavv_response":null,"proc_status_code":null,"proc_status_text":null,"proc_payment_id":null,"proc_auth_code":null,"proc_merch_comments":null,"error_msg":"account
+      string: ! '{"error_code":1023,"acct_no":null,"out_userid":null,"invoicing_error_code":null,"invoicing_error_msg":null,"invoice_no":null,"proc_cvv_response":null,"proc_avs_response":null,"proc_cavv_response":null,"proc_status_code":null,"proc_status_text":null,"proc_payment_id":null,"proc_auth_code":null,"proc_merch_comments":null,"out_new_acct_plan_contracts":null,"error_msg":"account
         userid not allowed"}
 
 '
     http_version: 
-  recorded_at: Tue, 27 Mar 2012 20:26:42 GMT
+  recorded_at: Thu, 05 Apr 2012 17:07:20 GMT
 recorded_with: VCR 2.0.0
