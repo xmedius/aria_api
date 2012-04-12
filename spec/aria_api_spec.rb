@@ -23,6 +23,14 @@ describe AriaApi do
       aria.make_request :auth_key => "the-special-key", :output_format => "xml"
     end
 
+    describe "arrays" do
+      it "serializes arrays using pipelines to separate each element" do
+        expects_call :auth_key => "auth_key", :client_no => "client_no", :output_format => "json",
+                     :array => "my|awesome|array|1|1.5|0"
+        aria.make_request :array => ["my", "awesome", "array", 1, 1.5, 0]
+      end
+    end
+
     def aria
       AriaApi
     end

@@ -9,8 +9,12 @@ module AriaApi
   include HTTParty
 
   def self.make_request(opts={})
-    opts = request_defaults.merge opts
+    opts = serialize_opts request_defaults.merge(opts)
     post AriaApi::Configuration.url, :body => opts
+  end
+
+  def self.serialize_opts(opts)
+    opts.each { |k, v| opts[k] = v.join("|") if v.is_a?(Array) }
   end
 
   def self.request_defaults
