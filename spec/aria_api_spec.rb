@@ -24,10 +24,17 @@ describe AriaApi do
     end
 
     describe "arrays" do
-      it "serializes arrays using pipelines to separate each element" do
+      it "serializes arrays params using pipelines to separate each element" do
         expects_call :auth_key => "auth_key", :client_no => "client_no", :output_format => "json",
                      :array => "my|awesome|array|1|1.5|0"
         aria.make_request :array => ["my", "awesome", "array", 1, 1.5, 0]
+      end
+
+      it "serializes response values containing pipe symbols as arrays" do
+        aria.should_receive(:post).and_return("the_array" => "my|awesome|array|1|1.5|0", "hi" => "hi")
+        request = aria.make_request
+        request["the_array"].should == ["my", "awesome", "array", "1", "1.5", "0"]
+        request["hi"].should == "hi"
       end
     end
 
@@ -36,7 +43,7 @@ describe AriaApi do
     end
 
     def expects_call(params)
-      aria.should_receive(:post).with("url", :body => params).and_return("response")
+      aria.should_receive(:post).with("url", :body => params).and_return("response" => "hi")
     end
   end
 

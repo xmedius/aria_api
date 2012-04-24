@@ -10,7 +10,7 @@ module AriaApi
 
   def self.make_request(opts={})
     opts = serialize_opts request_defaults.merge(opts)
-    post AriaApi::Configuration.url, :body => opts
+    serialize_response post(AriaApi::Configuration.url, :body => opts)
   end
 
   def self.serialize_opts(opts)
@@ -19,6 +19,12 @@ module AriaApi
 
   def self.request_defaults
     { :output_format => "json" }.merge AriaApi::Configuration.credentials
+  end
+
+  def self.serialize_response(response)
+    response.each do |k, v|
+      response[k] = v.split("|") if v.is_a?(String) && v.match(/\|/)
+    end
   end
 
   class << self
