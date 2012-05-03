@@ -38,4 +38,6 @@ Note you don't need to pass credentials since they're already defined in the con
 
 ## Demo Application
 
-pending
+[Code](https://github.com/jpemberthy/aria_api_demo)
+
+[Live App](http://aria-api-demo.herokuapp.com/)
