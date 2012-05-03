@@ -6,8 +6,8 @@ Gem::Specification.new do |s|
   s.name        = "aria_api"
   s.version     = AriaApi::VERSION
   s.platform    = Gem::Platform::RUBY
-  s.authors     = ["Juan Pemberty"]
-  s.email       = ["juan@pemberthy.com"]
+  s.authors     = ["Aria Systems, Inc"]
+  s.email       = ["customersupport@ariasystems.com"]
   s.homepage    = ""
   s.summary     = %q{Ruby Wrap for the aria subscriptions and billing system}
   s.description = %q{Ruby Wrap for the aria subscriptions and billing system}
