@@ -42,13 +42,13 @@ describe AriaApi::Configuration do
   end
 
   describe "self.api_version" do
-    it "returns 5.15 by default" do
-      conf.api_version.should == "5.15"
+    it "returns 6.4 by default" do
+      conf.api_version.should == "6.4"
     end
 
     it "can be overridden" do
-      conf.api_version = "5.16"
-      conf.api_version.should == "5.16"
+      conf.api_version = "6.5"
+      conf.api_version.should == "6.5"
     end
   end
 
