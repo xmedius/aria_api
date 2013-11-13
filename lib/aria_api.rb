@@ -39,7 +39,6 @@ module AriaApi
   end
 
   def self.load_actions_from_wsdl
-    self.wsdl_loaded = true
     class << self
       AriaApi::Service.actions.each do |call_name|
         # Poor-man's default block arguments for 1.8.7 with *args.
@@ -50,5 +49,6 @@ module AriaApi
         end
       end
     end
+    self.wsdl_loaded = true
   end
 end
