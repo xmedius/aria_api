@@ -24,6 +24,6 @@ Gem::Specification.new do |s|
   s.add_dependency "savon", "~> 2.1.0"
 
   ["rake", "rspec", "vcr", "webmock"].each do |dev_dependency|
-    s.add_dependency dev_dependency
+    s.add_development_dependency  dev_dependency
   end
 end
